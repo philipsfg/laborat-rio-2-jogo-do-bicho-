@@ -35,6 +35,36 @@ public class JogodoBixo {
     }
 
 
+    public String[] imprimeAposta(int[] aposta) {
+        int[] naoRepetido = new int[5];
+        int quantidade = 0;
+
+        for (int i = 0; i < aposta.length; i++) {
+            boolean repetido = false;
+
+            for (int j = 0; j < i; j++) {
+                if (aposta[i] == aposta[j]) {
+                    repetido = true;
+                    break;
+                }
+            }
+
+            if (!repetido) {
+                naoRepetido[quantidade] = aposta[i];
+                quantidade++;
+            }
+        }
+
+        String[] resultados = new String[quantidade];
+
+        for (int i = 0; i < quantidade; i++) {
+            resultados[i] = bixos[naoRepetido[i] - 1];
+        }
+
+        return resultados;
+    }
+
+
 
 
 }

@@ -21,6 +21,7 @@ public class Main {
         aposta = my.fazAposta();
         System.out.println(Arrays.toString(aposta));
 
-
+        String[] resultado = my.imprimeAposta(aposta);
+        System.out.println(Arrays.toString(resultado));
     }
 }
